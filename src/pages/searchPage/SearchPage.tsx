@@ -1,6 +1,6 @@
 import Search from "../../components/search/Search";
 import ContentLine from "../../components/contentLine/ContentLine";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { search } from "../../API/API";
 import styles from "./SearchPage.module.scss";
 import { useSelector } from "react-redux";
@@ -11,6 +11,7 @@ interface MyData {
     offset: number;
   };
 }
+
 function SearchPage() {
   const searchNow = useSelector((state: any) => state.searchInput);
   const [data, setData] = useState<MyData>({
@@ -25,8 +26,8 @@ function SearchPage() {
         pagination: newData.pagination,
       })
     );
-    console.log(searchNow);
   };
+
   const loadMore = () => {
     search(searchNow, data.pagination.offset + 9).then((newData) =>
       setData({
@@ -35,6 +36,7 @@ function SearchPage() {
       })
     );
   };
+
   return (
     <div className={styles.searchPage}>
       <Search onSearch={onSearch} />

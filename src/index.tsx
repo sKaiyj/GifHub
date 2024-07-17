@@ -1,41 +1,10 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
-import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
-import SearchPage from "./pages/searchPage/SearchPage";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import BestPage from "./pages/bestPage/BestPage";
-import RandomPage from "./pages/randomPage/RandomPage";
-const router = createBrowserRouter([
-  {
-    element: <App />,
-    children: [
-      { path: "/", element: <SearchPage /> },
-      { path: "/best", element: <BestPage /> },
-      { path: "/random", element: <RandomPage /> },
-    ],
-  },
-]);
-
-const defaultState = {
-  searchInput: "",
-  dataArray: [],
-};
-
-const reducer = (state = defaultState, action: any) => {
-  switch (action.type) {
-    case "SET_SEARCH_INPUT":
-      return { ...state, searchInput: action.payload };
-    case "SET_DATA":
-      return { ...state, data: action.payload };
-    default:
-      return state;
-  }
-};
-
-const store = configureStore({ reducer });
+import { RouterProvider } from "react-router-dom";
+import router from "./router/router";
+import store from "./store/store";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement

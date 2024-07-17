@@ -1,4 +1,4 @@
-import style from "./RandomPage.module.scss";
+import styles from "./RandomPage.module.scss";
 import Gif from "../../components/gif/Gif";
 import { random } from "../../API/API";
 import { useEffect, useState } from "react";
@@ -10,14 +10,16 @@ function RandomPage() {
     random().then((data) => setData(data.data.images.downsized.url));
   }, []);
 
-  const newRandom = () => {
-    random().then((data) => setData(data.data.images.downsized.url));
+  const newRandom = async () => {
+    const data = await random();
+    setData(data.data.images.downsized.url);
   };
+
   if (!data) return <Loader />;
   return (
-    <div className={style.randomPage}>
+    <div className={styles.randomPage}>
       <Gif src={data} height={300} />
-      <CustomButton className={style.button} onClick={newRandom}>
+      <CustomButton className={styles.button} onClick={newRandom}>
         New Random
       </CustomButton>
     </div>

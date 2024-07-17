@@ -1,10 +1,8 @@
-import React from "react";
 import CustomButton from "../button/CustomButton";
 import styles from "./buttonsGroup.module.scss";
 import { Link, useLocation } from "react-router-dom";
 const ButtonsGroup = () => {
   const active = useLocation().pathname;
-  console.log(active);
   return (
     <div className={styles.buttonsGroup}>
       <Link to='/'>

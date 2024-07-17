@@ -32,6 +32,7 @@ function BestPage() {
       })
     );
   };
+
   if (data.data.length === 0) return <Loader />;
 
   return (
