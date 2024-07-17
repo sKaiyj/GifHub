@@ -21,13 +21,15 @@ const router = createBrowserRouter([
 
 const defaultState = {
   searchInput: "",
-  searchNow: "",
+  dataArray: [],
 };
 
 const reducer = (state = defaultState, action: any) => {
   switch (action.type) {
     case "SET_SEARCH_INPUT":
       return { ...state, searchInput: action.payload };
+    case "SET_DATA":
+      return { ...state, data: action.payload };
     default:
       return state;
   }

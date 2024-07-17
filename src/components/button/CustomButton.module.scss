@@ -8,16 +8,17 @@
   border: 2px solid #fff;
   border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.3s ease;
   margin: 0 20px;
   min-width: 120px;
-}
-
-.button:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-}
-
-.button:active {
-  background-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.03);
+  }
+  &:active {
+    background-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transform: scale(0.96);
+  }
 }

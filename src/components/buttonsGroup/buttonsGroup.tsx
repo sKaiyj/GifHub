@@ -1,18 +1,26 @@
 import React from "react";
 import CustomButton from "../button/CustomButton";
 import styles from "./buttonsGroup.module.scss";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 const ButtonsGroup = () => {
+  const active = useLocation().pathname;
+  console.log(active);
   return (
     <div className={styles.buttonsGroup}>
       <Link to='/'>
-        <CustomButton>Search</CustomButton>
+        <CustomButton className={active === "/" ? styles.active : ""}>
+          Search
+        </CustomButton>
       </Link>
       <Link to='/best'>
-        <CustomButton>Best</CustomButton>
+        <CustomButton className={active === "/best" ? styles.active : ""}>
+          Best
+        </CustomButton>
       </Link>
       <Link to='/random'>
-        <CustomButton>Random</CustomButton>
+        <CustomButton className={active === "/random" ? styles.active : ""}>
+          Random
+        </CustomButton>
       </Link>
     </div>
   );

@@ -13,7 +13,7 @@ const Gif = ({
   className?: string;
 }) => {
   return (
-    <div className={className + " " + styles.gif}>
+    <a href={src} className={className + " " + styles.gif}>
       <img
         className={styles.img}
         src={src}
@@ -21,7 +21,7 @@ const Gif = ({
         height={height}
         {...props}
       />
-    </div>
+    </a>
   );
 };
 

@@ -3,6 +3,7 @@ import Gif from "../../components/gif/Gif";
 import { random } from "../../API/API";
 import { useEffect, useState } from "react";
 import CustomButton from "../../components/button/CustomButton";
+import Loader from "../../components/loader/Loader";
 function RandomPage() {
   const [data, setData] = useState("");
   useEffect(() => {
@@ -12,7 +13,7 @@ function RandomPage() {
   const newRandom = () => {
     random().then((data) => setData(data.data.images.downsized.url));
   };
-  if (!data) return <h1>"loading..."</h1>;
+  if (!data) return <Loader />;
   return (
     <div className={style.randomPage}>
       <Gif src={data} height={300} />
