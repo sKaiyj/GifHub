@@ -41,7 +41,7 @@ function SearchPage() {
     <div className={styles.searchPage}>
       <Search onSearch={onSearch} />
       {data.data.length === 0 ? (
-        <h1>Search a gif!</h1>
+        <h1 className={styles.h1}>Search a Gif!</h1>
       ) : (
         <ContentLine data={data.data} onLoadMore={loadMore} />
       )}

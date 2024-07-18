@@ -3,3 +3,19 @@
   align-items: center;
   flex-direction: column;
 }
+.h1 {
+  text-align: center;
+  margin: 0 auto;
+  width: 150px;
+  font-size: 48px;
+  font-weight: bold;
+  background: linear-gradient(to right, #ffd7be, #ffffbf, #b2fffc, #4ffcff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-family: "Permanent Marker", cursive;
+  cursor: pointer;
+  user-select: none;
+}
