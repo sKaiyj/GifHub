@@ -15,6 +15,7 @@ const Search = ({ onSearch }: { onSearch: () => void }) => {
   return (
     <div className={styles.searchContainer}>
       <input
+        onKeyUp={(e) => e.key === "Enter" && onSearch()}
         onChange={setSearchInput}
         value={searchInput}
         className={styles.search}
